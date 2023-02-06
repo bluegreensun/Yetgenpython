@@ -1,0 +1,10 @@
+#1.sorunun cevabı: print("Hello World")
+#2.sorunun cevabı: logo="beyaz"
+                   print(logo)
+#3.sorunun cevabı: sayı_1=int(input ("yarıçap uzunlugunu giriniz: "))
+sayı_2=3.14
+alan=sayı_1**  sayı_2
+print(alan)
+#4.sorunun cevabı: 
+#5.sorunun cevabı: print((5 - 3 )// 2)
+#6.sorunun cevabı: print(8 - 3 * 2 -(1 + 1))

@@ -5,6 +5,20 @@
 sayı_2=3.14
 alan=sayı_1**  sayı_2
 print(alan)
-#4.sorunun cevabı: 
+#4.sorunun cevabı: x=[1,2,3,4,5]
+z=x
+y=[5,4,3,2,1]
+x=y
+y=z
+print(x)
+print(y)
+
+
 #5.sorunun cevabı: print((5 - 3 )// 2)
 #6.sorunun cevabı: print(8 - 3 * 2 -(1 + 1))
+#7.sorunun cevabı: eslem=int(input())
+berkcan=int(input())
+emirhan=int(input())
+toplam=eslem+berkcan+emirhan
+esitpay=((toplam)//3)
+print(toplam-(esitpay*3))

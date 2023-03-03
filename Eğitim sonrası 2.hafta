@@ -1,1 +1,43 @@
+#2.sorunun cevabı:
+yükseklik=int(input("yükseklik giriniz:"))
+yari_çap=int(input("yari çapi giriniz:"))
+pi=3.14
+alan_silindir=(print(pi*yükseklik*yari_çap*yari_çap))
+alan_koni=print((yükseklik*yari_çap*yari_çap*pi)/3)
+#3.sorunun cevabı:
+dogumyili=int(input("doğum yilinizi giriniz:"))
+günümüz=2023
+print(günümüz-dogumyili)
+#4.sorunun cevabı:
+a=input("sayi giriniz:")
+b=input("sayi giriniz:")
+temp=a
+a=b
+b=temp
+print(a)
+print(b)
+#5.sorunun cevabı:
+a=16
+b=1.6
+c=1j
+d=True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+a=str(a)
+b=str(b)
+c=str(c)
+d=str(d)
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+#6.sorunun cevabı:
+uzun_kenar=int(input("sayi giriniz:"))
+kisa_kenar =int(input("sayi giriniz:"))
+print(uzun_kenar*kisa_kenar)
+print((uzun_kenar+kisa_kenar)*2)
+
+
 

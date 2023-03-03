@@ -1,3 +1,13 @@
+#1.sorunun cevabı:
+ad=input("isminizi giriniz:")
+soyad=input("soyisminizi giriniz:")
+meslek=input("mesleginizi giriniz:")
+yaş=input("yaşinizi giriniz:")
+anaPara=int(input("anapara miktarini giriniz:"))
+faizOrani=int(input("faiz oranini giriniz:"))
+yil=int(input("kalacak süreyi giriniz:"))
+toplam_tutar=anaPara*(1+(faizOrani/100)**yil)
+print("Merhaba",ad,soyad,yaş,"yaşinizdasiniz ve",meslek,"mesleğini yapmaktasiniz." ,anaPara,"TL'nin" ,faizOrani, "faiz orani ile", yil, "yillik bileşik faizi", toplam_tutar ,"bileşik faizi miktaridir")
 #2.sorunun cevabı:
 yükseklik=int(input("yükseklik giriniz:"))
 yari_çap=int(input("yari çapi giriniz:"))
@@ -38,6 +48,15 @@ uzun_kenar=int(input("sayi giriniz:"))
 kisa_kenar =int(input("sayi giriniz:"))
 print(uzun_kenar*kisa_kenar)
 print((uzun_kenar+kisa_kenar)*2)
-
+#7.sorunun cevabı:
+kişiSayisi=int(input("kişi sayisini giriniz:"))
+fatura=int(input("hesap miktarini giriniz:"))
+bahşişOrani=int(input("bahşiş oranini giriniz:"))
+toplamHesap =fatura+ (fatura * bahşişOrani)/100
+kişi_başi_ödenecek_hesap=print(toplamHesap/kişiSayisi)
+#8.srounun cevabı
+_5yil=365*24*60*60*5
+mecvütNüfüs=int(2000000)
+print(mecvütNüfüs +_5yil//7 + _5yil//45 - _5yil//13)
 
 

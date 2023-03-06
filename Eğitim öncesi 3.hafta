@@ -1,1 +1,54 @@
-
+1.SORUNUN CEVABI:
+sayi=float(input("bir sayı giriniz:"))
+if sayi%7==0:
+    print("sayi 7 ye kalansiz bölünür")
+else:
+    print("sayı 7 ye kalansiz bölünmez")
+2.SORUNUN CEVABI:
+vize=int(input("vize notunuzu giriniz:"))
+final=int(input("final notunuzu giriniz:"))
+not_ortalamasi=float((vize*0.4+final*0.6))
+if final < 50:
+    print("öğrenci ff almiştir")
+elif not_ortalamasi>85:
+    print("öğrenci AA almiştir")
+elif 75<not_ortalamasi<85:
+    print("öğrenci BA almiştir")    
+elif 70<not_ortalamasi<75:
+    print("öğrenci BB almiştir")    
+elif 65<not_ortalamasi<70:
+    print("öğrenci CB almiştir")    
+elif 60<not_ortalamasi<65:
+    print("öğrenci CC almiştir")    
+elif 55<not_ortalamasi<60:
+    print("öğrenci DC almiştir")    
+elif 50<not_ortalamasi<55:
+    print("öğrenci DD almiştir")    
+elif not_ortalamasi<50:
+    print("öğrenci FF almiştir")    
+3.SORUNUN CEVABI:
+Ahmetinyaşi=20
+Mehmetinyaşi=25
+if Ahmetinyaşi>Mehmetinyaşi:
+    print(Ahmetinyaşi)
+elif Mehmetinyaşi>Ahmetinyaşi:
+    print(Mehmetinyaşi)
+4.SORUNUN CEVABI:
+atesdegeri=float(input("ateş değerini giriniz:"))
+if atesdegeri<37.5:
+    print("Ateşiniz" , atesdegeri , "derece. AVM'ye girebilirisniz! Maske takamyi unutma!")
+elif atesdegeri>37.5:
+    print("Ateşiniz" , atesdegeri , "derece. AVM'ye giremezsin! Hemen evine dön!")
+5.SORUNUN CEVABI:
+kilo=int(input("kilonuzu kg cinsinden giriniz:"))
+boy=float(input("boyunuzu santim cinsinden giriniz:"))
+bki=kilo/(boy*boy)
+if bki<18.5:
+    print("Zayif")
+elif 18.5<bki<25:
+    print("Normal")
+elif 25<bki<30:
+    print("Fazla Kilolu")
+elif bki>30:
+    print("Obez")
+6.SORUNUN CEVABI:

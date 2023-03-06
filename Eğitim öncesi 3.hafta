@@ -52,3 +52,18 @@ elif 25<bki<30:
 elif bki>30:
     print("Obez")
 6.SORUNUN CEVABI:
+ad=input("adinizi giriniz:")
+yas=int(input("yaşinizi giriniz:"))
+eğitim=input("Eğitim durumunuzu nedir?" "lise / üniversite")
+if yas>=18 and (eğitim== "lise" or eğitim== "üniversite"):
+    print("ehliyet alabilirsiniz")
+else:
+    print("ehliyet alamazsınız")
+ 7.SORUNUN CEVABI:
+ yil=int(input("yil giriniz:"))
+if yil%4==0 and yil%100!=0:
+    print("artik yildir")
+elif yil%400==0:
+    print("artik yildir")  
+else:
+    print("artik yil değildir")

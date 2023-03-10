@@ -1,1 +1,27 @@
-
+1.sorunun cevabı:
+sayi=int(input("bir sayi giriniz:"))
+if sayi>0:
+    print("sayi pozitif")
+elif sayi<0:
+    print("sayi negatif")
+else:
+    print("sayi o'a eşit")
+4.sorunun cevabı:
+for i in range(1,11,1):
+    for k in range(1,11,1):
+          print(i, "x", k)
+6.sorunun cevabı:
+for i in range(1,101):
+    if i%3 !=0:
+        continue
+    elif i%3==0:
+        print(i)
+7.sorunun cevabı:
+for sayilar in range(1,101):
+    print(sayilar)
+    if sayilar%15==0:
+        print("YetGen")
+    elif sayilar%3==0:
+        print("Yet")
+    elif sayilar%5==0:
+        print("Gen")

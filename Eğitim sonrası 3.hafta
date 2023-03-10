@@ -6,10 +6,41 @@ elif sayi<0:
     print("sayi negatif")
 else:
     print("sayi o'a eşit")
+2.sorunun cevabı:
+sayi=int(input("bir sayi giriniz:"))
+toplam=0
+for i in range (1,sayi):
+    if(sayi%i==0):
+        toplam+=i
+if (sayi==toplam):
+        print("mükemmel sayidir.")
+else:
+        print("mükemmel sayi değil.")
+3.sorunun cevabı:
+sayi=int(input("bir sayi giriniz:"))
+basamak=int(input("basamak sayisi giriniz:"))
+toplam=0
+for x in range(0,basamak+1):
+    rakam=i%10
+toplam+=rakam**basamak
+i//=10
+if(sayi==toplam):
+    print("bu bir armstrong sayisidir.")
+else:
+    print("bu bir armstrong sayisi değildir.")
 4.sorunun cevabı:
 for i in range(1,11,1):
     for k in range(1,11,1):
           print(i, "x", k)
+5.sorunun cevabı:
+son_fiyat = 0
+while True:
+    fiyat = input("Ürün fiyatını girin (çıkmak için q'ya basın): ")
+    if fiyat == "q":
+        break
+    son_fiyat += float(fiyat)
+
+print("Toplam fiyat:", son_fiyat)
 6.sorunun cevabı:
 for i in range(1,101):
     if i%3 !=0:

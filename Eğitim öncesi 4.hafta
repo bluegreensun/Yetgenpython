@@ -1,1 +1,52 @@
+4.Sorunun cevabı:
+    1.soru:liste=["Bmw", "Mercedes", "Opel", "Mazda"]
+    2.soru:print(len(liste))
+    3.soru:print(liste[0])
+           print(liste[3])
+    4.soru:liste[3]="toyota"
+           print(liste)
+    5.sorunun cevabı:print(liste[-2])
+    6.sorunun cevabı:print(liste[0:3])
+    7.sorunun cevabı:liste[2]="Toyota"
+                     liste[3]="Renault"
+                     print(liste)
+    8.sorunun cevabı:liste.append("Audi")
+                     liste.append("Nissan")
+                     print(liste)
+    9.sorunun cevabı:liste.remove("Mazda")
+                     print(liste)  
+                     
+    10.srounun cevabı:liste.reverse()
+                      print(liste)
+                                                     11.sorunun cevabı:
+                                                     12.sorunun cevabı:
+    13.sorunun cevabı:names.append("Cenk")
+                       print(names)
+    14.sorunun cevabı:names.insert(0,"Sena")
+                      print(names) 
+    15.sorunun cevabı:names.remove("Deniz")
+                      print(names)
+                      
+                                                     16.sorunun cevabı:
+    17.sorunun cevabı:names.reverse()
+                       print(names)
 
+    18.srounun cevabı:names.sort()
+                       print(names) 
+    19.sorunun cevabı:years.sort()
+                       print(years)
+    20.sorunun cevabı: liste=["Chevrolet","Dacia"]
+                       print(liste) 
+                                                     21.sorunun cevabı:
+    22.sorunun cevabı:years.clear()
+                     print(years)
+    23.sorunun cevabı:a=input("marka ismi giriniz:")
+                      b=input("marka ismi giriniz:")
+                      c=input("marka ismi giriniz:")
+                      liste=[a, b, c]
+                      print(liste)                 
+
+
+   
+
+    

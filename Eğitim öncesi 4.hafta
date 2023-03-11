@@ -1,3 +1,13 @@
+1.sorunun cevabı:
+input("Lütfen numarasini girmek istediğiniz kişinin adini girin:")
+telefonrehberi={"İsmail": 5469372345}
+telefonrehberi.keys()
+telefonrehberi.values()
+print("isimli kişinin numarasi" , "şu şekildedir:",telefonrehberi.values() )
+2.sorunun cevabı:
+
+
+
 4.Sorunun cevabı:
     1.soru:liste=["Bmw", "Mercedes", "Opel", "Mazda"]
     2.soru:print(len(liste))

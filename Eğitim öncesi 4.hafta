@@ -37,7 +37,9 @@ print("isimli kişinin numarasi" , "şu şekildedir:",telefonrehberi.values() )
     15.sorunun cevabı:names.remove("Deniz")
                       print(names)
                       
-                                                     16.sorunun cevabı:
+    16.sorunun cevabı:if "Ali" in names:
+                          print(True)
+
     17.sorunun cevabı:names.reverse()
                        print(names)
 

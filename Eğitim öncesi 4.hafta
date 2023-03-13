@@ -41,8 +41,18 @@ else:
                      
     10.srounun cevabı:liste.reverse()
                       print(liste)
-                                                     11.sorunun cevabı:
-                                                     12.sorunun cevabı:
+    11. ve 12. sorunun cevabı:
+    students = [
+    ["Yiğit Bilgi", 2010, (70, 60, 70)],
+    ["Sena Turan", 1999, (80, 80, 70)],
+    ["Ahmet Turan", 1998, (80, 70, 90)]
+]
+for student in students:
+    print("Name:", student[0])
+    print("Birth Year:", student[1])
+    print("Grades:", student[2])
+    print("----------------------")
+  
     13.sorunun cevabı:names.append("Cenk")
                        print(names)
     14.sorunun cevabı:names.insert(0,"Sena")

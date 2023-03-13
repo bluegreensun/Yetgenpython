@@ -1,13 +1,26 @@
 1.sorunun cevabı:
-input("Lütfen numarasini girmek istediğiniz kişinin adini girin:")
-telefonrehberi={"İsmail": 5469372345}
-telefonrehberi.keys()
-telefonrehberi.values()
-print("isimli kişinin numarasi" , "şu şekildedir:",telefonrehberi.values() )
+telefon_defteri={"Kemal":5469871242,"Mahmut":5897461212}
+kişi = input("Telefon numarasini öğrenmek için bir kişi adi girin: ")
+cevap = "{} isimli kişinin telefon numarasi: {}"
+print(cevap.format(kişi, telefon_defteri[kişi]))
+
 2.sorunun cevabı:
-
-
-
+calisanlar={"ismail": ["Sivas", "22", "CEO"]}
+isim = input("Lütfen bilgilerini görüntülemek istediğiniz çalişanin ismini girin: ")
+if isim in calisanlar:
+    print(f"{isim}= Memleket: {calisanlar[isim][0]} Yaş: {calisanlar[isim][1]} Görev: {calisanlar[isim][2]}")
+else:
+    print("Bu isimde bir çalişan bulunamadi.")
+3.sorunun cevabı:sinav_notu1=int(input("1.sinav notunu girin:"))
+sinav_notu2=int(input("2.sinav notunu girin:"))
+sinav_notu3=int(input("3.sinav notunu girin:"))
+notortalmasi=(sinav_notu1+sinav_notu2+sinav_notu3)/3
+ögrenciler={"Mehmet": ["90", "60", "70"],"Ali": ["40","60","80"],"Kerem": ["50", "80", "70"] }
+isim = input("Lütfen bilgilerini görüntülemek istediğiniz öğrencinin ismini girin: ")
+if isim in ögrenciler:
+    print(f"{isim}= 1.sinav notu: {ögrenciler[isim][0]} 2.sinav notu: {ögrenciler[isim][1]} 3.sinav notu: {ögrenciler[isim][2]} Not ortalamasi: {notortalmasi}")
+else:
+    print("Bu isimde bir ögrenci bulunamadi.")
 4.Sorunun cevabı:
     1.soru:liste=["Bmw", "Mercedes", "Opel", "Mazda"]
     2.soru:print(len(liste))
@@ -49,7 +62,7 @@ print("isimli kişinin numarasi" , "şu şekildedir:",telefonrehberi.values() )
                        print(years)
     20.sorunun cevabı: liste=["Chevrolet","Dacia"]
                        print(liste) 
-                                                     21.sorunun cevabı:
+    21.sorunun cevabı:print(years.count(1998))
     22.sorunun cevabı:years.clear()
                      print(years)
     23.sorunun cevabı:a=input("marka ismi giriniz:")

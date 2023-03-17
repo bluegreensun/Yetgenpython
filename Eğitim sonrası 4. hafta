@@ -1,1 +1,61 @@
+1.sorunun cevabı:
+ögrenciler={}
+for i in range(3):
+    okulnumarasi=input("ögrencinin okul numarasini giriniz:")
+    ad=input("ögrencinin adini giriniz:")
+    soyad=input("ögrencinin sayadini giriniz:")
+    telefonno=input("ögrencinin telefon numarasini giriniz:")
+    dogumtarihi=input("ögrencinin dogum tarihini giriniz:")
+    liste=[ad,soyad,telefonno,dogumtarihi]
+    ögrenciler[okulnumarasi]=liste
+print(ögrenciler)
 
+2.sorunun cevabı:
+A şıkkı:
+numbers = [5,10,10,15,15,15,20,20,20,20]
+tekrareden=[]
+tekraretmeyen=[]
+for i in numbers:
+    if numbers.count(i)>1 and i not in tekrareden:
+        tekrareden.append(i)
+print(tekrareden)
+
+B şıkkı:
+numbers = [5,10,10,15,15,15,20,20,20,20]
+repeat=[]
+unique=[]
+for number in numbers:
+    if numbers.count(number)==1:
+        unique.append(number)
+    else: 
+        repeat.append(number)
+print(repeat)
+print(unique)        
+
+3.sorunun cevabı:
+sn1 = {1,2,3,4,5}
+sn2 = {4,5,6,7,8}
+kesişim=sn1.intersection(sn2)
+print("kesişimleri:",kesişim)
+fark=sn1.difference(sn2)
+print("farkları",fark)
+
+4.sorunun cevabı:
+a="  kEREm nasilsin   "
+print(a.capitalize())
+print(a.lower())
+print(a.upper())
+print(a.swapcase())
+print(a.title())
+print(a.replace("a","e"))
+print(a.endswith("l"))
+print(a.startswith("i"))
+print(a.find("k"))
+print(a.index("l"))
+print(a.count("i"))
+print(a.split("kE"))
+print(a.strip())
+print(a.join("sa"))
+print(a.islower())
+print(a.isalpha())
+print(a.isdigit())

@@ -1,1 +1,37 @@
+1.sorunun cevabı:
+def çevre(a,b):
+    print((a+b)*2)
+çevre(2,3)
 
+def alan(c,d):
+    print(c*d)
+alan(2,3)
+3.sorunun cevabı:
+a=int(input("çalişma saati girin:"))
+def computePay():
+    if a>40:
+        print("maaşınız:", a*15)
+    elif a<40:
+        print("maaşiniz:", a*10)
+    
+computePay()
+4.sorunun cevabı:
+def hesap():    
+  
+    a=int(input("kişi sayisini giriniz:"))
+    b=int(input("araç sayisini giriniz:"))  
+    if a%(4*b)==0:
+        print("kalan kişi sayisi 0'dir.")
+    elif a%(4*b)!=0:
+        print("kalan kişi sayisi:", a-4*b)
+hesap()
+ 5.sorunun cevabı:
+ def sayiTopla(*x):
+    (toplam)=0
+    for i in x:
+        toplam=toplam+i
+    print(toplam)
+sayiTopla(1,2,3,4,5,6,7,8)
+6.sorunun cevabı:
+liste=[("xxx",1),("xxx",2),("xxx",9),("xxx",3), ("xxx",1),("xxx",13),("xxx",26),("xxx",4)]
+print(liste[0][1],liste[1][1],liste[2][1],liste[3][1],liste[4][1],liste[5][1],liste[6][1],liste[7][1])

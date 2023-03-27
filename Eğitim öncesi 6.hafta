@@ -1,1 +1,22 @@
+1.sorunun cevabı:
+liste_kisakenar=[3,3,5,1]
+liste_uzunkenar=[4,10,6,9]
+alan=[]
+def dikdörtgen(a,b):
+    return a*b
+alan=list(map(dikdörtgen,liste_kisakenar,liste_uzunkenar))
+print(alan)
+
+3.sorunun cevabı:
+l=list(filter(lambda x: x%2==0, [1,2,3,4,5,6,7,8,9,10]))
+from functools import reduce
+sonuc = reduce((lambda x, y: x + y), l)
+print(sonuc)
+
+4.sorunun cevabı:
+isimler=["Kerim","Tarık","Ezgi","Kemal","İlkay","Şükran","Merve"]
+soyisimler=["Yılmaz","Öztürk","Dağdeviren","Atatürk","Dikmen","Kaya","Polat"]
+print(*zip(isimler,soyisimler))
+
+
 

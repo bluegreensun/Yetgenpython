@@ -1,1 +1,39 @@
+1.srounun cevabı:
+def ciftSayimi(liste):
+    for i in liste:
+        if i%2==0:
+            print(i)
+        else:
+            raise ValueError("listede tek sayi var")
+ciftSayimi([2,4,6,8,10,3,5,7,9])
+
+
+2.sorunun cevabı:
+import random
+import time
+
+rastgele_sayi=random.randint(1,100)
+tahmin_hakki=5
+while True:
+    tahmin=int(input("Tahmininiz:"))
+    if (tahmin<rastgele_sayi):
+        print("Bilgiler sorgulaniyor...")
+        time.sleep(1)
+        print("Daha yüksek bir sayi söyleyin")
+
+        tahmin_hakki-=1
+    elif(tahmin>rastgele_sayi):
+        print("Bilgiler sorgulaniyor...")
+        time.sleep(1)
+        print("daha düşük bir sayi söyleyin")
+        tahmin_hakki-=1
+    else:
+        print("Bilgiler sorgulaniyor...")
+        time.sleep(1)
+        print("tebrikler! Sayiniz",rastgele_sayi)
+        break
+    if (tahmin_hakki==0):
+        print("Tahmin hakkiniz  bitti")
+        print("Sayiniz",rastgele_sayi)
+        break
 

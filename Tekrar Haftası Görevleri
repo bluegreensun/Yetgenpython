@@ -1,0 +1,47 @@
+1.sorunun cevabı:
+sayi1=int(input("1.sayiyi giriniz:"))
+sayi2=int(input("2.sayiyi giriniz:"))
+for i in range(sayi1+1,sayi2):
+    print(i)
+    
+2.sorunun cevabı:
+sayi = int(input("Faktöriyelini Hesaplamak için sayı giriniz:"))
+deger = 1
+for i in range(sayi):
+    deger = deger * (i+1)
+print("Faktoriyel : ", deger)
+
+4.sorunun cevabı:
+sayi1=int(input("sayi giriniz"))
+sayi2=int(input("sayi giriniz"))
+if sayi1<sayi2:
+    print(sayi2)
+elif sayi2<sayi1:
+    print(sayi1)
+else:
+    print("iki sayi birbirine eşit")
+    
+5.sorunun cevabı:
+sayi=int(input("sayi giriniz:"))
+for i in range(sayi):
+    ad=input("urununuzun ismini giriniz:")
+    fiyat=int(input("urununuzun fiyatini girinz:"))
+dict={ad:fiyat}
+print(dict)
+
+6.sorunun cevabı:
+ceviri = str.maketrans("çğıöşü", "cgiosu")
+dosyaadi=input("dosya adni giriniz")
+dosyaadi_eng = dosyaadi.translate(ceviri)
+print(dosyaadi_eng)
+
+8.sorunun cevabı:
+import datetime as dt
+dogum=input("doğum tarihinizi giriniz: (Gün.Ay.Yil) ")
+dogum=dt.datetime.strptime(dogum,"%d.%m.%Y")
+simdi=dt.datetime.now()
+yas=simdi-dogum
+Yil=yas.days//365
+Ay=yas.days%365//30
+Gün=yas.days%365%30
+print(f"{Yil} yil {Ay} ay {Gün} gündür hayattasiniz")

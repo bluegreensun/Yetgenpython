@@ -11,6 +11,13 @@ for i in range(sayi):
     deger = deger * (i+1)
 print("Faktoriyel : ", deger)
 
+3.sorunun cevabı:
+numbers = input("Virgül ile ayrılmış sayıları giriniz: ")
+number_list = numbers.split(",")  
+number_list = [int(num) for num in number_list]  
+total = sum(number_list)  
+print("Toplam: ", total)  
+
 4.sorunun cevabı:
 sayi1=int(input("sayi giriniz"))
 sayi2=int(input("sayi giriniz"))
@@ -35,6 +42,27 @@ dosyaadi=input("dosya adni giriniz")
 dosyaadi_eng = dosyaadi.translate(ceviri)
 print(dosyaadi_eng)
 
+7.sorunun cevabı:
+import random
+target_number = random.randint(0, 100)
+print("Bir sayi seçildi. Tahmin edin.")
+lower_bound = 0
+upper_bound = 100
+guess_count = 0
+while True:
+    guess = (lower_bound + upper_bound) // 2
+    guess_count += 1
+    print("Tahmin:", guess)
+    if guess == target_number:
+        print("Tebrikler! {} tahminde buldunuz.".format(guess_count))
+        break
+    elif guess < target_number:
+        print("Daha yüksek bir sayı seçin.")
+        lower_bound = guess + 1
+    else:
+        print("Daha düşük bir sayı seçin.")
+        upper_bound = guess - 1
+
 8.sorunun cevabı:
 import datetime as dt
 dogum=input("doğum tarihinizi giriniz: (Gün.Ay.Yil) ")
@@ -45,3 +73,37 @@ Yil=yas.days//365
 Ay=yas.days%365//30
 Gün=yas.days%365%30
 print(f"{Yil} yil {Ay} ay {Gün} gündür hayattasiniz")
+
+9.sorunun cevabı:
+tek_sayilar = []
+cift_sayilar = []
+while True:
+    sayi = input("Lütfen bir sayı girin (çıkış için q tuşuna basın)")
+
+    if sayi == 'q':
+        break
+    if sayi.isdigit():
+        sayi = int(sayi)
+        if sayi % 2 == 0:
+            cift_sayilar.append(sayi)
+        else:
+            tek_sayilar.append(sayi)
+tek_sayilar.sort(reverse=True)
+cift_sayilar.sort(reverse=True)
+print("Tek Sayılar: ", tek_sayilar)
+print("Çift Sayılar: ", cift_sayilar)
+
+10.sorunun cevabı:
+n = int(input("Altigenin kac satirdan olusmasini istersiniz? "))
+m = int(input("Orta satir kac karakterden olusmali? "))
+
+for i in range(n):
+    if i == n // 2:
+        print(" " * (n-i-1) + '' m)
+    else:
+        if i < n // 2:  
+            num_stars = i * 2 + 1
+        else:          
+            num_stars = (n-i-1) * 2 + 1
+        print(' ' * (n-i-1) + '' num_stars)
+

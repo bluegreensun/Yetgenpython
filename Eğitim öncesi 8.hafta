@@ -1,1 +1,35 @@
+1.sorunun cevabı:
+ürün=input("ürünün adi nedir:")
+fiyat=float(input("fiyati nedir:"))
+with open ("urunler.txt","w",encoding="utf-8") as file:
+    file.write(f"{ürün} - {fiyat} TL\n")
 
+2.sorunun cevabı:
+def kelime_degistir(eski_kelime, yeni_kelime, urunler):
+    with open(urunler, "r") as file:
+        icerik = file.read()
+
+    icerik = icerik.replace(eski_kelime, yeni_kelime)
+
+    with open(urunler, "w") as file:
+        file.write(icerik)
+
+3.sorunun cevabı:
+class Vehicle:
+    def init(self, brand, model, year, weight):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.weight = weight
+
+    def start(self):
+        print(f"{self.brand} {self.model} started.")
+
+    def stop(self):
+        print(f"{self.brand} {self.model} stopped.")
+
+    def get_info(self):
+        print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nWeight: {self.weight}")
+
+class Bus(Vehicle):
+    pass

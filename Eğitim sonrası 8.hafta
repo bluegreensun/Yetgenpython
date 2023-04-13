@@ -1,1 +1,61 @@
+1.orunun cevabı:
+n = int(input("Kaç giriş yapmak istiyorsunuz? "))
+users = []
+for i in range(n):
+    name = input("İsim ve Soyisim: ")
+    age = int(input("Yaş: "))
+    height = float(input("Boy (metre cinsinden): "))
+    weight = float(input("Kilo (kg cinsinden): "))
+    bmi = weight / (height ** 2)
+    if bmi < 18.5:
+        category = "Zayıf"
+    elif bmi < 25:
+        category = "Normal kilolu"
+    elif bmi < 30:
+        category = "Fazla kilolu"
+    elif bmi < 40:
+        category = "Obez"
+    else:
+        category = "İleri derecede obez"
+    user_data = {
+        "isim": name,
+        "yaş": age,
+        "boy": height,
+        "kilo": weight,
+        "vki": bmi,
+        "vki kategorisi": category
+    }
+    users.append(user_data)
+with open("kullanıcı.txt", "w", encoding="utf-8") as f:
+    for user in users:
+        f.write(str(user) + "\n")
+        
+2.sorunun cevabı:
+class YetBar:
+    def __init__(self):
+        self.menu = {
+            "1": {"name": "Yeşil Detoks", "price": 10},
+            "2": {"name": "Meyveli Karışım", "price": 8},
+            "3": {"name": "Protein Power", "price": 12},
+            "4": {"name": "Süper Smoothie", "price": 15}
+        }
+        self.sales_history = []
 
+    def display_menu(self):
+        print("********** MENÜ **********")
+        for key, value in self.menu.items():
+            print(key + ". " + value["name"] + " - " + str(value["price"]) + " TL")
+
+    def make_sale(self):
+        self.display_menu()
+        selection = input("Lütfen bir seçim yapınız (1-4): ")
+        while selection not in self.menu.keys():
+            selection = input("Geçersiz seçim. Lütfen tekrar deneyin (1-4): ")
+        product = self.menu[selection]
+        print(product["name"] + " seçtiniz. Fiyatı: " + str(product["price"]) + " TL")
+        confirm = input("Satın almak istiyor musunuz? (E/H): ")
+        if confirm.lower() == "e":
+            self.sales_history.append({"product": product["name"], "price": product["price"], "date": datetime.now()})
+            print("Satın alma işlemi başarıyla tamamlandı. İyi günlerde kullanın!")
+        else:
+            print("Satın alma işlemi iptal edildi.")

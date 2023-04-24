@@ -1,1 +1,28 @@
+1.sorunun cevabı:
+import numpy as np
+matris = np.random.randint(0, 11, size=(5)) 
+print("Matris boyutu:", matris.shape) 
+matris = matris.reshape(1, 5)  
+print("Yeni matris boyutu:", matris.shape)  
+print("Matris boyut sayısı:", matris.ndim)  
 
+2.sorunun cevabı:
+import numpy as np
+matris = np.arange(1, 11, 2).reshape(2, 2)
+print("Oluşturulan matris:\n", matris)
+alt_matris_1 = matris[:1, :]
+alt_matris_2 = matris[1:, :]
+birlesik_matris = np.concatenate((alt_matris_1, alt_matris_2), axis=0)
+print("Birleştirilen matris:\n", birlesik_matris)
+
+3.sorunun cevabı:
+import numpy as np
+matris = np.random.randint(low=5, high=101, size=(5, 2))*2
+print("Oluşturulan matris:\n", matris)
+print("Matrisin boyutu:", matris.shape)
+print("Matrisin eleman sayısı:", matris.size)
+print("Matrisin veri tipi:", matris.dtype)
+print("Matrisin toplamı:", np.sum(matris))
+print("Matrisin en küçük elemanı:", np.min(matris))
+print("Matrisin en büyük elemanı:", np.max(matris))
+print("Matrisin satırlarının toplamları:", np.sum(matris, axis=1))

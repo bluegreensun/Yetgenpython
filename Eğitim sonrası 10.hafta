@@ -1,1 +1,82 @@
+1.sorunun cevabı:
+import numpy as np
+my_array = np.array([3, 5, 1, 4, 2])
+my_array_sorted = np.sort(my_array)
+print(my_array_sorted)
+
+2.sorunun cevabı:
+import numpy as np
+
+# 1
+array1 = np.array([10, 15, 30, 45, 60])
+
+# 2
+array2 = np.arange(5, 16)
+
+# 3
+array3 = np.arange(50, 101, 5)
+
+# 4
+array4 = np.zeros(10)
+
+# 5
+array5 = np.ones(10)
+
+# 6
+array6 = np.linspace(0, 100, 5)
+
+# 7
+array7 = np.random.randint(10, 31, 5)
+
+# 8
+array8 = np.random.uniform(-1, 1, 10)
+
+# 9
+array9 = np.random.randint(10, 51, (3,5))
+
+# 10
+row_sum = np.sum(array9, axis=1)
+col_sum = np.sum(array9, axis=0)
+
+print("Row Sum:", row_sum)
+print("Column Sum:", col_sum)
+
+# 11
+max_val = np.max(array9)
+min_val = np.min(array9)
+mean_val = np.mean(array9)
+
+print("Max Value:", max_val)
+print("Min Value:", min_val)
+print("Mean Value:", mean_val)
+
+# 12
+max_index = np.argmax(array9)
+
+print("Max Value Index:", max_index)
+
+# 13
+array13 = np.arange(10, 21)[:3]
+
+# 14
+array14 = np.flip(array9)
+
+# 15
+first_row = array9[0]
+
+# 16
+value = array9[1, 2]
+
+print("Value at (2,3):", value)
+
+# 17
+first_elem = array9[:, 0]
+
+# 18
+squared_array = np.square(array9)
+
+# 19
+positive_even_nums = array9[(array9 > 0) & (array9 % 2 == 0)]
+
+print("Positive even numbers:", positive_even_nums)
 

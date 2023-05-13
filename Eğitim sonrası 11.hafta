@@ -1,1 +1,632 @@
+class TarimUrunu:
+    def __init__(self, urun_secim):
+        self.urun_secim = urun_secim
+        if self.urun_secim == 1:
+            self.urun_adi = "Karpuz"
+        elif self.urun_secim == 2:
+            self.urun_adi = "Çilek"
+        elif self.urun_secim == 3:
+            self.urun_adi = "Kavun"
+        elif self.urun_secim == 4:
+            self.urun_adi = "Kayısı"
+        elif self.urun_secim == 5:
+            self.urun_adi = "Kivi"
+        elif self.urun_secim == 6:
+            self.urun_adi = "Patates"
+        elif self.urun_secim == 7:
+            self.urun_adi = "Soğan"
+        elif self.urun_secim == 8:
+            self.urun_adi = "Fasulye"
+        elif self.urun_secim == 9:
+            self.urun_adi = "Havuç"
+        elif self.urun_secim == 10:
+            self.urun_adi = "Ispanak"
+        elif self.urun_secim == 0 :
+            print("Program sonlandırılıyor.")
+            exit()
+        else:
+            print("Geçersiz seçim. Lütfen 1 ile 10 arasında bir sayı girin veya 'q' tuşuna basarak çıkış yapın.")
+            exit()
+        self.ph = None
+        self.nem = None
+        self.toprak_sicaklik = None
+        self.hava_sicaklik = None
 
+class KarpuzYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(1)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 6 <= self.toprak_pH <= 7.5:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7.5:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 50:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 50 <= self.toprak_nem <= 70:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 70:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+    
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 18:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 18 <= self.toprak_sicaklik <= 25:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 25:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+    
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 20:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 20 <= self.hava_sicaklik <= 30:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 30:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını kapatabilirsiniz.")
+            
+
+
+    def karpuz_yetistirme_kontrol(self):
+        
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class CilekYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(2)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 5.5:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 5.5 <= self.toprak_pH <= 6.5:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 6.5:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+
+            
+    def toprak_nem_kontrol(self):
+      if self.toprak_nem is None:  
+        self.toprak_nem = float(input("Toprak nem değerini girin: "))
+      if self.toprak_nem < 70:
+        print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+      elif 70 <= self.toprak_nem <= 80:
+        print("Toprak nem değeri uygun.")
+      elif self.toprak_nem > 80:
+        print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    
+    def toprak_sicaklik_kontrol(self):
+      if self.toprak_sicaklik is None:  
+        self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+      if self.toprak_sicaklik < 15:
+        print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+      elif 15 <= self.toprak_sicaklik <= 25:
+        print("Toprak sıcaklık değeri uygun.")
+      elif self.toprak_sicaklik > 25:
+        print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    
+    def hava_sicaklik_kontrol(self):
+      if self.hava_sicaklik is None:  
+        self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+      if self.hava_sicaklik < 15:
+        print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+      elif 15 <= self.hava_sicaklik <= 25:
+        print("Hava sıcaklık değeri uygun.")
+      elif self.hava_sicaklik > 25:
+        print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+
+    def cilek_yetistirme_kontrol(self):       
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()   
+
+class KavunYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(3)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 6 <= self.toprak_pH <= 7:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 60:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 60 <= self.toprak_nem <= 70:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 70:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 20:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 20 <= self.toprak_sicaklik <= 30:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 30:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 20:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 20 <= self.hava_sicaklik <= 30:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 30:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+    def kavun_yetistirme_kontrol(self):       
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()  
+
+class KayisiYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(4)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 6 <= self.toprak_pH <= 7:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 50:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 50 <= self.toprak_nem <= 60:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 60:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 15:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 15 <= self.toprak_sicaklik <= 25:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 25:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 15:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 15 <= self.hava_sicaklik <= 25:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 25:
+            print("Hava sıcaklık değeri yöksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def kayisi_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class KiviYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(5)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 5.5:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 5.5 <= self.toprak_pH <= 6.5:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 6.5:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 65:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 65 <= self.toprak_nem <= 75:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 75:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 15:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 15 <= self.toprak_sicaklik <= 25:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 25:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 15:
+            print("Hava sıcaklık değeri dûşÜk. Seranın havalandırmasını açabilirsiniz.")
+        elif 15 <= self.hava_sicaklik <= 25:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 25:
+            print("Hava sıcaklık değeri yöksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def kivi_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class PatatesYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(6)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 5.5:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 5.5 <= self.toprak_pH <= 7:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 60:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 60 <= self.toprak_nem <= 80:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 80:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 10:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 10 <= self.toprak_sicaklik <= 20:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 20:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 10:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 10 <= self.hava_sicaklik <= 25:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 25:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def patates_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class SoganYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(7)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 6 <= self.toprak_pH <= 7:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 60:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 60 <= self.toprak_nem <= 80:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 80:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 10:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 10 <= self.toprak_sicaklik <= 20:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 20:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 10:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 10 <= self.hava_sicaklik <= 25:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 25:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def sogan_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class FasulyeYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(8)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif 6 <= self.toprak_pH <= 7:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH > 7:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 60:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 60 <= self.toprak_nem <= 80:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 80:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 15:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 15 <= self.toprak_sicaklik <= 25:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 25:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 15:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 15 <= self.hava_sicaklik <= 30:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 30:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def fasulye_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+class HavucYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(9)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if 6.0 <= self.toprak_pH <= 7.0:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH < 6.0:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif self.toprak_pH > 7.0:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 70:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 70 <= self.toprak_nem <= 80:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 80:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if 10 <= self.toprak_sicaklik <= 25:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik < 10:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif self.toprak_sicaklik > 25:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if 18 <= self.hava_sicaklik <= 25:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik < 18:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif self.hava_sicaklik > 25:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def havuc_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+ 
+class IspanakYetistirme(TarimUrunu):
+    def __init__(self, toprak_pH=None, toprak_nem=None, toprak_sicaklik=None, hava_sicaklik=None):
+        super().__init__(10)
+        self.toprak_pH = toprak_pH 
+        self.toprak_nem = toprak_nem 
+        self.toprak_sicaklik = toprak_sicaklik 
+        self.hava_sicaklik = hava_sicaklik 
+        
+    def toprak_pH_kontrol(self):
+        if self.toprak_pH is None:
+            self.toprak_pH = float(input("Toprak pH değerini giriniz: "))
+        if 6 <= self.toprak_pH <= 7.5:
+            print("Toprak pH değeri uygun.")
+        elif self.toprak_pH < 6:
+            print("Toprak pH değeri düşük. Toprağa kireç veya dolomit ekleyebilirsiniz.")
+        elif self.toprak_pH > 7.5:
+            print("Toprak pH değeri yüksek. Toprağa turba veya sülfürik asit ekleyebilirsiniz.")
+    
+    def toprak_nem_kontrol(self):
+        if self.toprak_nem is None:  
+            self.toprak_nem = float(input("Toprak nem değerini girin: "))
+        if self.toprak_nem < 50:
+            print("Toprak nem değeri düşük. Daha sık sulama yapabilirsiniz.")
+        elif 50 <= self.toprak_nem <= 70:
+            print("Toprak nem değeri uygun.")
+        elif self.toprak_nem > 70:
+            print("Toprak nem değeri yüksek. Daha az sulama yapabilirsiniz.")
+
+    def toprak_sicaklik_kontrol(self):
+        if self.toprak_sicaklik is None:  
+            self.toprak_sicaklik = float(input("Toprak sıcaklık değerini girin: "))
+        if self.toprak_sicaklik < 5:
+            print("Toprak sıcaklık değeri düşük. Isıtıcı kullanabilirsiniz.")
+        elif 5 <= self.toprak_sicaklik <= 20:
+            print("Toprak sıcaklık değeri uygun.")
+        elif self.toprak_sicaklik > 20:
+            print("Toprak sıcaklık değeri yüksek. Gölgeleme yapabilirsiniz.")
+
+    def hava_sicaklik_kontrol(self):
+        if self.hava_sicaklik is None:  
+            self.hava_sicaklik = float(input("Hava sıcaklık değerini girin: "))
+        if self.hava_sicaklik < 5:
+            print("Hava sıcaklık değeri düşük. Seranın havalandırmasını açabilirsiniz.")
+        elif 5 <= self.hava_sicaklik <= 20:
+            print("Hava sıcaklık değeri uygun.")
+        elif self.hava_sicaklik > 20:
+            print("Hava sıcaklık değeri yüksek. Seranın havalandırmasını artırabilirsiniz.")
+
+    def ispanak_yetistirme_kontrol(self):
+        self.toprak_pH_kontrol()
+        self.toprak_nem_kontrol()
+        self.toprak_sicaklik_kontrol()     
+        self.hava_sicaklik_kontrol()
+
+while True:
+    urun_secim = input("Lütfen yetiştirmek istediğiniz ürünü seçin:\n1 1:Karpuz\n2 :2Çilek\n 3:Kavun\n 4:Kayısı\n 5:Kivi\n 6:Patates\n 7:Soğan\n 8:Fasulye\n 9:Havuç\n 10:Ispanak\n 0:Çıkış\n Seçiminiz: ")
+    
+    if urun_secim.isdigit():
+        urun_secim = int(urun_secim)
+        if urun_secim == 1:
+            tarim_urunu = TarimUrunu(urun_secim)
+            karpuz_yetistirme = KarpuzYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+            karpuz_yetistirme.karpuz_yetistirme_()
+        elif urun_secim == 2:
+            tarim_urunu = TarimUrunu(urun_secim)
+            cilek_yetistirme = CilekYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+            cilek_yetistirme.cilek_yetistirme_kontrol()
+        elif urun_secim == 3:
+          tarim_urunu = TarimUrunu(urun_secim)
+          kavun_yetistirme = KavunYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          kavun_yetistirme.kavun_yetistirme_kontrol()
+        elif urun_secim == 4:
+          tarim_urunu = TarimUrunu(urun_secim)
+          kayisi_yetistirme = KayisiYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          kayisi_yetistirme.kayisi_yetistirme_kontrol()
+        elif urun_secim == 5:
+          tarim_urunu = TarimUrunu(urun_secim)
+          kivi_yetistirme = KiviYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          kivi_yetistirme.kivi_yetistirme_kontrol()
+        elif urun_secim == 6:
+          tarim_urunu = TarimUrunu(urun_secim)
+          patates_yetistirme = PatatesYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          patates_yetistirme.patates_yetistirme_kontrol()
+        elif urun_secim == 7:
+          tarim_urunu = TarimUrunu(urun_secim)
+          sogan_yetistirme = SoganYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          sogan_yetistirme.sogan_yetistirme_kontrol()
+        elif urun_secim == 8:
+          tarim_urunu = TarimUrunu(urun_secim)
+          fasulye_yetistirme =  FasulyeYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          fasulye_yetistirme.fasulye_yetistirme_kontrol()
+        elif urun_secim == 9:
+          tarim_urunu = TarimUrunu(urun_secim)
+          havuc_yetistirme = HavucYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          havuc_yetistirme.havuc_yetistirme_kontrol()
+        elif urun_secim == 10:
+          tarim_urunu = TarimUrunu(urun_secim)
+          ispanak_yetistirme = IspanakYetistirme(tarim_urunu.ph, tarim_urunu.nem, tarim_urunu.toprak_sicaklik, tarim_urunu.hava_sicaklik)
+          ispanak_yetistirme.ispanak_yetistirme_kontrol()                          
+        elif urun_secim == 0:
+          print("Program sonlandırılıyor.")
+          break                           
+    else:
+        print("Geçersiz seçim. Lütfen 1 ile 10 arasında bir sayı girin veya 0 tuşuna basarak çıkış yapın.")
